@@ -1,0 +1,86 @@
+.progress {
+	background-color: $darckBgColor;
+		/* .progress__wrapper */
+		&__wrapper {
+			padding: rem(160) rem(43) rem(160) rem(43);
+			@include adaptiveValue("padding-top", 160, 120, 0, 834, 375);
+			@include adaptiveValue("padding-right", 43, 112, 0, 1440, 834);
+			@include adaptiveValue("padding-bottom", 160, 120, 0, 834, 375);
+			@include adaptiveValue("padding-left", 43, 112, 0, 1440, 834);
+
+			@include adaptiveValue("padding-right", 112, 29.5, 0, 834, 375);
+			@include adaptiveValue("padding-left", 112, 29.5, 0, 834, 375);
+		}
+		/* .progress__conntainer */
+		&__container {
+		}
+		/* .progress__box */
+		&__box {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			border: 5px solid $accentColor;
+			border-radius: 23px;
+			max-width: 1200px;
+			margin: 0 auto;
+			min-height: 746px;
+			@include adaptiveValue("min-height", 746, 528, 0, 1440, 834);
+			@include adaptiveValue("min-height", 528, 507, 1, 834, 375);
+			@include adaptiveValue("padding", 15, 10, 0, 1440, 834);
+			@media (max-width: em(834)){
+				border-width: 2px;
+			}
+		}
+		/* .progress__body */
+		&__body {
+			border-radius: 23px;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			flex: 1 1 100%;
+		}
+		/* .progress__content */
+		&__content {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			position: relative;
+			flex:100%;
+			border-radius: 23px;
+			@include adaptiveValue("padding", 40, 20, 0 , 1440, 834);
+			font-style: normal;
+			font-weight: 500;
+			@include adaptiveValue("font-size", 30, 15);
+			line-height: math.div(80 , 80);
+			letter-spacing: -0.04em;
+			color: $secondTextColor;
+
+		}
+		/* .progress__title */
+		&__title {
+			z-index: 1;
+			margin-bottom: rem(3);
+		}
+		/* .progress__number */
+		&__number {
+			z-index: 1;
+			@include adaptiveValue("font-size", 80, 60, 0, 1440, 834);
+			@include adaptiveValue("margin-bottom", 80, 46, 0, 1440, 834);
+		}
+		/* .progress__descr */
+		&__descr {
+			z-index: 1;
+		}
+		/* .progress__line */
+		&__line {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background-color: $accentColor;
+			height: percent(333,706);
+			z-index: 0;
+			transition: height 0.3s ease 0s;
+		}
+}

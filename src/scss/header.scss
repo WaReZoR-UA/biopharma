@@ -1,0 +1,221 @@
+//====================================================================================================
+.header {
+    position: relative;
+
+    /* .header__background */
+    &__background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+    /* .header__container */
+    &__container {
+    }
+    /* .header_content */
+    &__content {
+		@include adaptiveValue("padding", 60, 30);
+		position: relative;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 23px;
+		background-color: $mainBgColor;
+		z-index: 4;
+    }
+    /* .header__wrapper */
+    &__wrapper {
+        @include adaptiveValue("padding-top", 100, 126,0, 1440, 834);
+        @include adaptiveValue("padding-top", 126, 80, 3, 834, 375);
+        @include adaptiveValue("padding-right", 136, 41.53, 0, 1440, 834);
+        @include adaptiveValue("padding-right", 41.53, 6, 3, 834, 375);
+        @include adaptiveValue("padding-bottom", 224, 247, 0, 1440, 834);
+        @include adaptiveValue("padding-bottom", 247, 170, 3, 834, 375);
+        @include adaptiveValue("padding-left", 137, 43, 0, 1440, 834);
+        @include adaptiveValue("padding-left", 43, 6, 3, 834, 375);
+    }
+    /* .header__title */
+    &__title {
+		font-style: normal;
+		font-weight: 700;
+		@include adaptiveValue("font-size", 79.9, 42.9, 2, 1440, 757);
+		@include adaptiveValue("font-size", 42.9, 30, 3, 756, 375);
+		line-height: math.div( 88, 80);
+		letter-spacing: -0.05em;
+		text-transform: uppercase;
+		color: $secondTextColor;
+
+    }
+    /* .header__divider */
+    &__divider {
+		height: 3px;
+		background-color: $secondTextColor;
+		margin-bottom: rem(10);
+    }
+    /* .header__words-swiper */
+    &__words-swiper {
+		margin-bottom: rem(72);
+    }
+    /* .header__descr */
+    &__descr {
+		margin-bottom: rem(30);
+		@include adaptiveValue("font-size", 30, 18);
+		line-height: math.div(30 , 30);
+    }
+    /* .header__brends */
+    &__brends {
+		margin-top: rem(30);
+    }
+}
+.swiper {
+    /* .swiper__wrapper */
+    &__wrapper {
+		overflow-y: clip;
+		@include adaptiveValue("height", 172, 76);
+    }
+    /* .swiper__body */
+    &__body {
+		max-height: 176px;
+    }
+    /* .swiper__item */
+    &__item {
+		display: inline-block;
+		height: 100%;
+		font-style: normal;
+		font-weight: 700;
+		@include adaptiveValue("font-size", 80, 42.9, 2, 1440, 834);
+		@include adaptiveValue("font-size", 42.9, 30, 3, 834, 375);
+		line-height: math.div(88 , 80);
+		letter-spacing: -0.03em;
+		text-transform: uppercase;
+		color: $accentColor;
+    }
+}
+.brends {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	@media (max-width: em(654)){
+		justify-content: space-between;
+	}
+    /* .brends__item */
+    &__item {
+		z-index: 0;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-right", 87, 26, 0, 1440, 834);
+			@media (max-width: em(654)){
+				margin-right: rem(0);	
+			}
+		}
+		&:first-child{
+			position: relative;
+			@include adaptiveValue("width", 229.96, 119.98);
+			@include adaptiveValue("height", 45.99, 24);
+			img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				object-fit: contain;
+			}
+		}
+		&:nth-child(2) {
+			position: relative;
+			@include adaptiveValue("width", 96.33, 51.02);
+			@include adaptiveValue("height", 66.12, 36.63);
+			img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				object-fit: contain;
+			}
+		}
+		&:nth-child(3) {
+			position: relative;
+			@include adaptiveValue("width", 70.39, 36.72);
+			@include adaptiveValue("height", 69, 36);
+			img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				object-fit: contain;
+			}
+		}
+		&:last-child{
+			position: relative;
+			@include adaptiveValue("width", 133.8, 96.53, 0, 1440, 834);
+			@include adaptiveValue("height", 34.8, 25.11, 0, 1440, 834);
+			img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				object-fit: contain;
+			}
+			@media (max-width: em(654)){
+				 display: none 
+			}
+		}
+    }
+}
+
+//====================================================================================================
+
+//Burger
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/

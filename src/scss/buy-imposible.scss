@@ -1,0 +1,46 @@
+.buy-imposible {
+	background-color: $darckBgColor;
+	text-align: center;
+	color: $whiteTextColor;
+		/* .buy-imposible__wrapper */
+		&__wrapper {
+		}
+		/* .buy-imposible__container */
+		&__container {
+		}
+		/* .buy-imposible__title */
+		&__title {
+			font-style: normal;
+			font-weight: 700;
+			@include adaptiveValue("font-size", 80, 35);
+			line-height: math.div(80 , 80);
+			letter-spacing: -0.03em;
+			text-transform: uppercase;
+		}
+		/* .buy-imposible__slider */
+		&__slider {
+			margin-bottom: rem(82);
+		}
+		/* .buy-imposible__descr */
+		&__descr {
+			font-style: normal;
+			font-weight: 400;
+			@include adaptiveValue("font-size", 40, 18);
+			line-height: math.div(40 , 40);
+			letter-spacing: -0.04em;
+		}
+}
+.slider-imposible {
+		/* .slider-imposible__body */
+		&__body {
+		}
+		/* .slider-imposible__item */
+		&__item {
+			font-style: normal;
+			font-weight: 700;
+			@include adaptiveValue("font-size", 80, 35);
+			line-height: math.div(80 , 80);
+			letter-spacing: -0.03em;
+			text-transform: uppercase;
+		}
+}
