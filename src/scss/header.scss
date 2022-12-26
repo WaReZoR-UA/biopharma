@@ -62,7 +62,7 @@
 		@include adaptiveValue("font-size", 30, 18);
 		line-height: math.div(30 , 30);
     }
-    /* .header__brends */
+	/* .header__brends */
     &__brends {
 		margin-top: rem(30);
     }

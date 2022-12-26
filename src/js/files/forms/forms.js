@@ -4,6 +4,7 @@ import { flsModules } from "../modules.js";
 // Допоміжні функції
 import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../functions.js";
 
+
 //================================================================================================================================================================================================================================================================================================================================
 
 
@@ -23,7 +24,7 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 		const targetElement = e.target;
 		if ((targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA')) {
 			if (targetElement.dataset.placeholder) {
-				targetElement.placeholder = '';
+				// targetElement.placeholder = '';
 			}
 			if (!targetElement.hasAttribute('data-no-focus-classes')) {
 				targetElement.classList.add('_form-focus');

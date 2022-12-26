@@ -1,10 +1,17 @@
 <div id="popup" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
-			</div>
+			<button data-close type="button" class="popup__close"></button>
+			<div class="popup__title">ВИ МАЙЖЕ ДОНОР</div>
+			<p class="popup__subtitle">На сайті неможливо здати кров, але можна дати слово</p>
+			<form action="#" method="POST" data-dev class="form">
+				<div class="form__input-cover"><input autocomplete="off" type="text" name="form[name]" data-validate data-required data-error="Обов’язкове поле" placeholder="ім’я" class="form__input"></div>
+				<div class="form__input-cover"><input autocomplete="off" type="text" name="form[surname]" data-validate data-required data-error="Обов’язкове поле" placeholder="прізвище" class="form__input"></div>
+				<div class="form__input-cover"><input autocomplete="off" type="tel" name="form[phone]" data-tel data-validate data-required data-error="Обов’язкове поле" placeholder="+3 80" class="form__input"></div>
+				<div class="form__input-cover"><input autocomplete="off" type="text" name="form[city]" data-validate data-required data-error="Обов’язкове поле" placeholder="city" class="form__input"></div>
+				<button type="submit" class="form__button">ДАТИ СЛОВО</button>
+				<p class="form__descr">Залиште контакти – ми розповімо, як стримати слово і стати донором</p>
+			</form>
 		</div>
 	</div>
 </div>

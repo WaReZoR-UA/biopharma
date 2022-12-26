@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Thank you page"
+})
+
+<body class="white_bg">
+	<div class="wrapper wrapper_thankyou">
+		@@include('html/_header-thankyou.htm',{})
+		<main class="page">
+			<div class="page__container">
+				<div class="card card_thankyou">
+					<div class="card__wrapper">
+						<h2 class="card__title">а поки діліться цією сторіс,бо ваш вчинок вже вартий бути прикладом</h2>
+						<div class="card_body">
+							<video preload="none" poster="../img/cards/card.jpg">
+								<source src="../files/hearts_low.mp4">
+							</video>
+							<span class="card__play-btn">
+								<img src="@img/other/play_btn.svg" alt="play button">
+							</span>
+						</div>
+						<div class="card__buttons">
+							<a href="../files/hearts_large.mp4" class="card__download" download>
+								<img src="@img/icons/download_btn.svg" alt="download button">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		@@include('html/_footer-thankyou.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

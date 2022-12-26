@@ -28,30 +28,48 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //Social sharing
 
-	let fbLink = document.querySelector('#facebook'),
+    let fbLink = document.querySelector('#facebook'),
         twLink = document.querySelector('#twitter'),
-		copyLink = document.querySelector('#copy-link'),
-		url = window.location.href
-	
-	if (fbLink) {
-		fbLink.href = `https://www.addtoany.com/add_to/facebook?linkurl=${url}`;
-	}
-	if (twLink) {
-		twLink.href = `https://www.addtoany.com/add_to/twitter?linkurl=${url}`;
+        copyLink = document.querySelector('#copy-link'),
+        url = window.location.href
+
+    if (fbLink) {
+        fbLink.href = `https://www.addtoany.com/add_to/facebook?linkurl=${url}`
     }
-	
-	const copyLinkUrl = async () => {
-		try {
-			if (window.isSecureContext && navigator.clipboard) {
-				await navigator.clipboard.writeText(url)
-				console.log('Content copied to clipboard')
+    if (twLink) {
+        twLink.href = `https://www.addtoany.com/add_to/twitter?linkurl=${url}`
+    }
+
+    const copyLinkUrl = async () => {
+        try {
+            if (window.isSecureContext && navigator.clipboard) {
+                await navigator.clipboard.writeText(url)
+                console.log('Content copied to clipboard')
             }
-		} catch (err) {
-			console.error('Failed to copy: ', err)
-		}
-	}
-	if (copyLink) {
-		copyLink.addEventListener('click', copyLinkUrl)
-	}
-	
+        } catch (err) {
+            console.error('Failed to copy: ', err)
+        }
+    }
+    if (copyLink) {
+        copyLink.addEventListener('click', copyLinkUrl)
+    }
+
+    //Дія після успішного надсилання форми
+    document.addEventListener('formSent', function (e) {
+        // Форма
+        const currentForm = e.detail.form
+        if (currentForm) {
+            window.open('/thankyou.html', '_self')
+        }
+    })
+
+    //Автоматичне додавання посилання на кнопку Повернення на сайт
+    const backToHomeLink = document.querySelector('.footer__link')
+    function addHomeUrl(targetLink) {
+        if (targetLink) {
+            const homeUrl = window.location.hostname
+            targetLink.href = '/'
+        }
+    }
+    addHomeUrl(backToHomeLink)
 })
