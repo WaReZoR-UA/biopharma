@@ -110,13 +110,16 @@ export let formValidate = {
 		} else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
 			this.addError(formRequiredItem);
 			error++;
-		} else {
-			if (!formRequiredItem.value.trim()) {
+		} else if ("tel" === formRequiredItem.type) {
+			if (18 !== formRequiredItem.value.length) {
 				this.addError(formRequiredItem);
 				error++;
-			} else {
-				this.removeError(formRequiredItem);
 			}
+		} else if (!formRequiredItem.value.trim()) {
+			this.addError(formRequiredItem);
+			error++;
+		} else {
+			this.removeError(formRequiredItem);
 		}
 		return error;
 	},

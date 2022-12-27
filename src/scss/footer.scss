@@ -98,6 +98,7 @@
 	}
     /* .social-footer__item */
     &__item {
+		will-change: transform;
 		transition: transform 0.3s ease 0s;
         &:not(:last-child) {
             @include adaptiveValue('margin-right', 22.61, 13.61, 0, 1440, 834);
@@ -108,7 +109,7 @@
         }
 		@media (any-hover: hover){
 			&:hover{
-				transform: scale(1.02);
+				transform: scale(1.1);
 			}
 		}
     }
