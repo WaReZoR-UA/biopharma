@@ -125,12 +125,14 @@ const sliderMain = document.querySelector('#slider-main')
 		stickySwipeSection.style.height = `${pinedLenght}vh`
 		
 		stickySwipeBody.style.width = 100 * stickySwipeElements.length + '%'
-		stickySwipeBody.style.transform = `translateX(${width})`
+		stickySwipeBody.style.transform = `translate3d(${width}, 0, 0)`
 		
 		stickySwipeElements.forEach(slide => {
 			slide.style.width = width
 		})
         //slide position
+
+
 		function moveSlidesForward() {
 			if (swiperOffset <= parseInt(width) * (stickySwipeElements.length - 1)) {
 				stickySwipeBody.style.transform = `translateX(-${swiperOffset}px)`
