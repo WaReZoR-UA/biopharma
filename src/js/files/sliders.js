@@ -112,7 +112,7 @@ const sliderMain = document.querySelector('#slider-main')
 	
     if (stickySwipeSection) {
 		const stickySwiperWrapper = stickySwipeSection.querySelector('.buy-imposible__wrapper'),
-			  stickySwipeContainer = stickySwipeSection.querySelector('.buy-imposible__container'),
+			  stickySwipeContainer = stickySwipeSection.querySelector('.slider-imposible'),
 			  stickySwipeBody = stickySwipeSection.querySelector('.slider-imposible__body'),
 			  stickySwipeElements = stickySwipeSection.querySelectorAll('.slider-imposible__item')
 		let width = window.getComputedStyle(stickySwipeContainer).width,
@@ -164,8 +164,6 @@ const sliderMain = document.querySelector('#slider-main')
 
 		const onScroll = throttle(() => {
 			const currentScrollTop = document.documentElement.scrollTop
-			console.log(ScrollTop > currentScrollTop)
-			console.log('Offset', swiperOffset)
 			if (stickySwiperWrapper.getBoundingClientRect().top == 0 && (ScrollTop > currentScrollTop) === false) {
 				moveSlidesForward()
 			}

@@ -39,7 +39,7 @@
 }
 .slider-imposible {
     overflow: hidden;
-	@include adaptiveValue("width", 1271, 345);
+	@include adaptiveValue("width", 1286, 345);
     /* .slider-imposible__body */
     &__body {
         display: flex;
