@@ -2550,7 +2550,6 @@
                 new js(sliderMain, {
                     cellSelector: ".slider-main__item",
                     wrapAround: true,
-                    autoPlay: 7e3,
                     cellAlign: "center",
                     pageDots: false,
                     prevNextButtons: false

@@ -74,7 +74,7 @@ const sliderMain = document.querySelector('#slider-main')
 		const mainSlider = new Flickity(sliderMain, {
 			cellSelector: '.slider-main__item',
 			wrapAround: true,
-			autoPlay: 7000,
+			// autoPlay: 7000,
 			cellAlign: 'center',
 			pageDots: false,
 			prevNextButtons: false,
